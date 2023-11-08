@@ -74,6 +74,9 @@ function Notes() {
 
   return (
     <div>
+      <header>
+        <h1><Link to={'/'}>Home</Link></h1>
+      </header>
       <h1>My Notes</h1>
       <input
         type="text"
