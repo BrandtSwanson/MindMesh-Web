@@ -11,7 +11,7 @@ function Notes() {
   // Fetch the list of notes when the component mounts
   useEffect(() => {
     getNotes()
-      .then((response) => setNotes(response.data))
+      .then((response) => setNotes(response.data || []))
       .catch((error) => console.error("Error fetching notes:", error));
   }, []);
 
@@ -96,12 +96,14 @@ function Notes() {
 
       {/* List of notes */}
       <ul>
-        {notes.map((note) => (
+      {notes && notes.length > 0 && (
+        notes.map((note) => (
           <li key={note.id}>
             <Link to={`/notes/${note.id}`}>{note.title}</Link>
             <button onClick={() => deleteNoteById(note.id)}>Delete</button>
           </li>
-        ))}
+        ))
+      )}
       </ul>
     </div>
   );
