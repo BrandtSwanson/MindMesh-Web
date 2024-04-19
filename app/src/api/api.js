@@ -25,3 +25,24 @@ export const updateNote = (noteId, note) => {
 export const deleteNote = (noteId) => {
   return api.delete(`/api/notes/${noteId}`);
 };
+
+
+export const createGoal = (goal) => {
+  return api.post('/api/goals', goal);
+};
+
+export const getGoals = () => {
+  return api.get('/api/goals');
+};
+
+export const getGoalById = (goalId) => {
+  return api.get(`/api/goals/${goalId}`);
+};
+
+export const updateGoal = (goalId, goal) => {
+  return api.put(`/api/goals/${goalId}`, goal);
+};
+
+export const deleteGoal = (goalId) => {
+  return api.delete(`/api/goals/${goalId}`);
+};

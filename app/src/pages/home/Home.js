@@ -12,17 +12,15 @@ function HomePage() {
 
       <section className="features">
         <div className="feature">
-          <i className="fas fa-tasks"></i>
           <h2><Link to={`/notes/`}>Notes</Link></h2>
           <p>Keep track of your to-do lists and tasks efficiently.</p>
         </div>
         <div className="feature">
           <i className="fas fa-chart-line"></i>
-          <h2>Goal Setting</h2>
+          <h2><Link to={`/goals/`}>Goals</Link></h2>
           <p>Set and track your goals for personal and professional growth.</p>
         </div>
         <div className="feature">
-          <i className="fas fa-chart-pie"></i>
           <h2>Progress Tracking</h2>
           <p>Visualize your progress and analyze your productivity.</p>
         </div>

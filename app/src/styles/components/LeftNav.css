@@ -1,0 +1,19 @@
+.left-nav {
+    width: 60px; /* Adjust the width as needed */
+    height: 100%;
+    background-color: #2c3e50; /* Different color than the background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .icon {
+    margin-bottom: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ecf0f1; /* Adjust the icon color */
+  }
+  
+  .icon:hover {
+    color: #bdc3c7; /* Darker color on hover */
+  }

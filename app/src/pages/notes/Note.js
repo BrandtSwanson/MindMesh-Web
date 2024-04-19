@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/notes/NotesPage.css";
+import "../../styles/global/App.css";
 import { Link } from "react-router-dom";
 import { createNote, getNotes, deleteNote } from "../../api/api";
+import LeftNav from "../../components/LeftNav";
 
 function Notes() {
   const [notes, setNotes] = useState([]); // Array to store notes
@@ -73,38 +75,38 @@ function Notes() {
   };
 
   return (
-    <div>
-      <header>
-        <h1><Link to={'/'}>Home</Link></h1>
-      </header>
-      <h1>My Notes</h1>
-      <input
-        type="text"
-        value={newNoteTitle}
-        onChange={(e) => setNewNoteTitle(e.target.value)}
-        onKeyPress={handleKeyPress}
-        placeholder="Enter a new note title..."
-      />
-      <input
-        type="text"
-        value={newNoteText}
-        onChange={(e) => setNewNoteText(e.target.value)}
-        onKeyPress={handleKeyPress}
-        placeholder="Enter a new note..."
-      />
-      <button onClick={addNote}>Add Note</button>
+    <div className="app">
+      <LeftNav></LeftNav>
+      <div className="notes">
+        <h1>My Notes</h1>
+        <input
+          type="text"
+          value={newNoteTitle}
+          onChange={(e) => setNewNoteTitle(e.target.value)}
+          onKeyPress={handleKeyPress}
+          placeholder="Enter a new note title..."
+        />
+        <input
+          type="text"
+          value={newNoteText}
+          onChange={(e) => setNewNoteText(e.target.value)}
+          onKeyPress={handleKeyPress}
+          placeholder="Enter a new note..."
+        />
+        <button onClick={addNote}>Add Note</button>
 
-      {/* List of notes */}
-      <ul>
-      {notes && notes.length > 0 && (
-        notes.map((note) => (
-          <li key={note.id}>
-            <Link to={`/notes/${note.id}`}>{note.title}</Link>
-            <button onClick={() => deleteNoteById(note.id)}>Delete</button>
-          </li>
-        ))
-      )}
-      </ul>
+        {/* List of notes */}
+        <ul>
+        {notes && notes.length > 0 && (
+          notes.map((note) => (
+            <li key={note.id}>
+              <Link to={`/notes/${note.id}`}>{note.title}</Link>
+              <button onClick={() => deleteNoteById(note.id)}>Delete</button>
+            </li>
+          ))
+        )}
+        </ul>
+      </div>
     </div>
   );
 }
