@@ -1,0 +1,55 @@
+.title-bar {
+  width: 100%;
+  height: 50px;
+  flex-shrink: 0;
+  position: fixed;
+}
+
+.title-bar-notes {
+  width: 33.333%;
+  height: 50px;
+  flex-shrink: 0;
+  background: #020024;
+}
+
+.filler {
+  width: 100%;
+  height: 100%;
+}
+
+.title-bar-planner {
+  display: flex;
+  position: relative;
+  width: 33.333%;
+  height: 50px;
+  justify-content: left;
+  flex-shrink: 0;
+}
+
+.title-bar-planner-cal {
+  width: 33.333%;
+  height: 50px;
+  flex-shrink: 0;
+  background: #09085F;
+}
+
+.title-bar-planner-todo {
+  width: 33.333%;
+  height: 1.875rem;
+  flex-shrink: 0;
+  background: #0F0F8E;
+}
+
+.title-bar-planner-reminder {
+  width: 33.333%;
+  height: 50px;
+  flex-shrink: 0;
+  background: #086EC4;
+}
+
+.title-bar-assistant {
+  width: 33.333%;
+  height: 50px;
+  flex-shrink: 0;
+  background: #AADBE5;
+}
