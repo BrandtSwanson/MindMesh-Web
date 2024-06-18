@@ -3,7 +3,7 @@ import "../../styles/goals/GoalsPage.css";
 import "../../styles/global/App.css";
 import { Link } from "react-router-dom";
 import { createGoal, getGoals, deleteGoal } from "../../api/api";
-import LeftNav from "../../components/LeftNav";
+import LeftNav from "../../components/TitleBar";
 
 function Goals() {
   const [goals, setGoals] = useState([]); // Array to store goals

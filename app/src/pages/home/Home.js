@@ -5,31 +5,31 @@ import { Link } from "react-router-dom";
 function HomePage() {
   return (
     <div className="home-page">
-      <header className="header">
-        <h1>Welcome to Your Productivity App</h1>
-        <p>Stay organized, set goals, and achieve more every day.</p>
-      </header>
+      <div className="title-bar">
+        <h1 className="title-bar-text">MINDMESH</h1>
+      </div>
 
-      <section className="features">
-        <div className="feature">
-          <h2><Link to={`/notes/`}>Notes</Link></h2>
-          <p>Keep track of your to-do lists and tasks efficiently.</p>
+      <div className="features">
+        <div className="notes">
+        <Link to={`/notes/`} style={{ textDecoration: 'none' }}>
+          <h2 className="feature-text">NOTES</h2>
+        </Link>
         </div>
-        <div className="feature">
-          <i className="fas fa-chart-line"></i>
-          <h2><Link to={`/goals/`}>Goals</Link></h2>
-          <p>Set and track your goals for personal and professional growth.</p>
+        <div className="planner">
+          <Link to={`/goals/`} style={{ textDecoration: 'none' }}>
+          </Link>
+          <div className="planner-cal"></div>
+          <div className="planner-todo"></div>
+          <div className="planner-reminder"></div>
+          <h2 className="planner-text">PLANNER</h2>
         </div>
-        <div className="feature">
-          <h2>Progress Tracking</h2>
-          <p>Visualize your progress and analyze your productivity.</p>
+        <div className="assistant">
+          <Link to={`/assistant/`} style={{ textDecoration: 'none' }}>
+              <h2 className="feature-text">ASSISTANT</h2>
+          </Link>
         </div>
-      </section>
+      </div>
 
-      <footer className="footer">
-        <p>Get started and boost your productivity today!</p>
-        <button className="get-started-button">Get Started</button>
-      </footer>
     </div>
   );
 }

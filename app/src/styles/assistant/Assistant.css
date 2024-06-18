@@ -1,16 +1,17 @@
-.notes-page {
+.assistant-page {
   font-family: Arial, sans-serif;
   justify-content: left;
   display: block;
   flex-wrap: wrap;
   height: 100%;
-  background:#020024;
+  background:#AADBE5;
   width: 100%;
   align-items: flex-start;
 }
 
-.notes-title {
-  color: #FFF;
+.assistant-title {
+  align-content: right;
+  color: #020024;
   font-family: Inter;
   font-size: 3.75rem;
   font-style: normal;
@@ -18,7 +19,7 @@
   line-height: normal;
 }
 
-.notes-quick-entry {
+.assistant-entry {
   width: 99%;
   position:static;
   height: 5%;
@@ -35,11 +36,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-.notes-entry-title {
-  color: #AADBE5;
-  text-decoration: none;
-}
-
 
 button {
   background-color: #007bff;
@@ -48,7 +44,6 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  text-decoration: none;
 }
 
 button:hover {
@@ -66,4 +61,11 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
 }

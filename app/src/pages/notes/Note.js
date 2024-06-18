@@ -3,7 +3,7 @@ import "../../styles/notes/NotesPage.css";
 import "../../styles/global/App.css";
 import { Link } from "react-router-dom";
 import { createNote, getNotes, deleteNote } from "../../api/api";
-import LeftNav from "../../components/LeftNav";
+import TitleBar from "../../components/TitleBar";
 
 function Notes() {
   const [notes, setNotes] = useState([]); // Array to store notes
@@ -76,17 +76,17 @@ function Notes() {
 
   return (
     <div className="app">
-      <LeftNav></LeftNav>
-      <div className="notes">
-        <h1>My Notes</h1>
-        <input
+      <TitleBar></TitleBar>
+      <div className="notes-page">
+        <h1 className="notes-title">My Notes</h1>
+        <input className="notes-quick-entry"
           type="text"
           value={newNoteTitle}
           onChange={(e) => setNewNoteTitle(e.target.value)}
           onKeyPress={handleKeyPress}
           placeholder="Enter a new note title..."
         />
-        <input
+        <input className="notes-quick-entry"
           type="text"
           value={newNoteText}
           onChange={(e) => setNewNoteText(e.target.value)}
@@ -100,8 +100,8 @@ function Notes() {
         {notes && notes.length > 0 && (
           notes.map((note) => (
             <li key={note.id}>
-              <Link to={`/notes/${note.id}`}>{note.title}</Link>
-              <button onClick={() => deleteNoteById(note.id)}>Delete</button>
+              <Link to={`/notes/${note.id}` } className="notes-entry-title">{note.title}</Link>
+              <button onClick={() => deleteNoteById(note.id) }>Delete</button>
             </li>
           ))
         )}
