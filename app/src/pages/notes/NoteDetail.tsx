@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getNotes } from "../../api/api";
 
-function NoteDetail() {
+
+type Props = {
+}
+
+const NoteDetail = ({}: Props) => {
   const [notes, setNotes] = useState([]);
   const [note, setNote] = useState(null);
   const { noteId } = useParams();

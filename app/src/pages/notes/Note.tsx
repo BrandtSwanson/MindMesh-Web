@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 import { createNote, getNotes, deleteNote } from "../../api/api";
 import TitleBar from "../../components/TitleBar";
 
-function Notes() {
+type Props = {
+}
+
+const Notes = ({}: Props) => {
   const [notes, setNotes] = useState([]); // Array to store notes
   const [newNoteText, setNewNoteText] = useState(""); // Input field for creating a new note
   const [newNoteTitle, setNewNoteTitle] = useState(""); // Input field for creating a new note
@@ -29,7 +32,7 @@ function Notes() {
         // Add more properties as needed (e.g., createdAt, updatedAt)
       };
 
-      createNote(newNote)
+      createNote(JSON.stringify(newNote))
         .then((response) => {
           // Update the state to include the new note
           setNotes([...notes, newNote]);
@@ -46,7 +49,7 @@ function Notes() {
         // Add more properties as needed (e.g., createdAt, updatedAt)
       };
 
-      createNote(newNote)
+      createNote(JSON.stringify(newNote))
         .then((response) => {
           // Update the state to include the new note
           setNotes([...notes, newNote]);
@@ -76,7 +79,7 @@ function Notes() {
 
   return (
     <div className="app">
-      <TitleBar></TitleBar>
+      <TitleBar text=""></TitleBar>
       <div className="notes-page">
         <h1 className="notes-title">My Notes</h1>
         <input className="notes-quick-entry"

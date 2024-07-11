@@ -2,34 +2,34 @@ import React, { useEffect, useState } from "react";
 import "../../styles/assistant/Assistant.css";
 import "../../styles/global/App.css";
 import TitleBar from "../../components/TitleBar";
-
+import { createNote } from "../../api/api";
 import Markdown from 'react-markdown'
 
+type Props = {
+}
 
-function Assistant() {
+const Assistant = ({}: Props) => {
   const [queryRequest, setQueryRequest] = useState("");
   const [queryResponse, setQueryResponse] = useState("");
   const [error, setError] = useState("");
 
-  // Function 
+  // Function to query
   const llamaQuery = async () => {
     const queryURL = new URL("http://localhost:5601/query?");
     queryURL.searchParams.append("text", queryRequest);
-  
+
     const response = await fetch(queryURL, { mode: "cors" });
     if (!response.ok) {
       return { text: "Error in query", sources: [] };
     }
-  
+
     try {
       const textResponse = await response.text();
       setQueryResponse(textResponse);
     } catch (error) {
       console.error("Error parsing JSON:", error);
     }
-    
   };
-
 
   // Function to handle Enter key press
   const handleKeyPress = (event) => {
@@ -38,9 +38,28 @@ function Assistant() {
     }
   };
 
+  // Function to add a new note
+  const addNote = () => {
+    if (queryRequest.trim() !== "" && queryResponse.trim() !== "") {
+      // Create a new note object with a unique ID
+      const newNote = {
+        id: Date.now(),
+        title: queryRequest,
+        content: queryResponse,
+        // Add more properties as needed (e.g., createdAt, updatedAt)
+      };
+
+      createNote(JSON.stringify(newNote))
+        .then((response) => {
+          console.log("Note added.");
+        })
+        .catch((error) => console.error("Error creating note:", error));
+    }
+  };
+
   return (
     <div className="app">
-      <TitleBar></TitleBar>
+      <TitleBar text=""></TitleBar>
       <div className="assistant-page">
         <h1 className="assistant-title">Assistant</h1>
         <input
@@ -52,16 +71,15 @@ function Assistant() {
           placeholder="Enter Query..."
         />
         <button onClick={llamaQuery}>Query</button>
+        <button onClick={addNote}>Add to notes</button>
 
-        {/* List of notes */}
-        <h1>
-          <Markdown>
-            {queryResponse}
-          </Markdown>
-        </h1>
+        {/* Displaying query response using Markdown */}
+        <div className="query-response">
+          <Markdown>{queryResponse}</Markdown>
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default Assistant;

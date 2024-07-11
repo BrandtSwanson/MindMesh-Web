@@ -2,7 +2,11 @@ import React from "react";
 import "../../styles/home/HomePage.css";
 import { Link } from "react-router-dom";
 
-function HomePage() {
+
+type Props = {
+}
+
+const HomePage = ({}: Props) => {
   return (
     <div className="home-page">
       <div className="title-bar">

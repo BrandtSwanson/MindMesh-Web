@@ -1,8 +1,12 @@
 import "../styles/components/TitleBar.css";
 import { Link } from "react-router-dom";
+import React, { MouseEventHandler } from 'react'
 
-function TitleBar() {
-  return (
+type Props = {
+  text: string,
+}
+
+const TitleBar = ({text}: Props) => (
     <div className="title-bar">
       <div className="title-bar-notes">
       <Link to={`/notes/`} style={{ textDecoration: 'none' }}><div className="filler"></div></Link>
@@ -19,7 +23,6 @@ function TitleBar() {
       </div>
       
     </div>
-  );
-}
+)
 
 export default TitleBar;
