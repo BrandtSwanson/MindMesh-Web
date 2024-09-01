@@ -7,7 +7,7 @@
 
 .title-bar-notes {
   width: 33.333%;
-  height: 50px;
+  height: 100%;
   flex-shrink: 0;
   background: #020024;
 }

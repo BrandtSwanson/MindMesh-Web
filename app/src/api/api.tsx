@@ -26,3 +26,10 @@ export const deleteNote = (noteId:number) => {
   return api.delete(`/api/notes/${noteId}`);
 };
 
+export const addPersonalData = (personal:string) => {
+  return api.post(`/api/personal`, personal);
+};
+
+export const getPersonalEntries = () => {
+  return api.get(`/api/personal`);
+};

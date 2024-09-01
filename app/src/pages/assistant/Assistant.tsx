@@ -12,9 +12,15 @@ const Assistant = ({}: Props) => {
   const [queryRequest, setQueryRequest] = useState("");
   const [queryResponse, setQueryResponse] = useState("");
   const [error, setError] = useState("");
+  const [showLoad, setShowLoad] = useState(false);
+  const [loadNum, setLoadNum] = useState(1);
 
+  const getRandomNumber = () => Math.floor(Math.random() * 5) + 1;
   // Function to query
   const llamaQuery = async () => {
+    setLoadNum(getRandomNumber);
+    setQueryResponse("");
+    setShowLoad(true);
     const queryURL = new URL("http://localhost:5601/query?");
     queryURL.searchParams.append("text", queryRequest);
 
@@ -59,7 +65,7 @@ const Assistant = ({}: Props) => {
 
   return (
     <div className="app">
-      <TitleBar text=""></TitleBar>
+      <TitleBar text="assistant"></TitleBar>
       <div className="assistant-page">
         <h1 className="assistant-title">Assistant</h1>
         <input
@@ -72,7 +78,12 @@ const Assistant = ({}: Props) => {
         />
         <button onClick={llamaQuery}>Query</button>
         <button onClick={addNote}>Add to notes</button>
-
+        {showLoad && queryResponse == "" && (
+        <img
+        src={require('../../images/' + loadNum + '.webp')}
+        style={{ width: 100, height: 100 }}
+      />
+        )}
         {/* Displaying query response using Markdown */}
         <div className="query-response">
           <Markdown>{queryResponse}</Markdown>

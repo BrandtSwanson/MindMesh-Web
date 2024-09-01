@@ -4,6 +4,8 @@ import '../../styles/calendar/Calendar.css';
 
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
+const monthsOfYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
 const Calendar: React.FC = () => {
   // Get the current date
   const currentDate = new Date();
@@ -32,6 +34,7 @@ const Calendar: React.FC = () => {
   return (
     <div className="calendar">
       <div className="calendar-header">
+        <h1>{monthsOfYear[currentDate.getMonth()]}</h1>
         {daysOfWeek.map((day) => (
           <div key={day} className="calendar-header-day">
             {day}
