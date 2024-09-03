@@ -15,7 +15,7 @@ const Assistant = ({}: Props) => {
   const [showLoad, setShowLoad] = useState(false);
   const [loadNum, setLoadNum] = useState(1);
 
-  const getRandomNumber = () => Math.floor(Math.random() * 5) + 1;
+  const getRandomNumber = () => Math.floor(Math.random() * 4) + 1;
   // Function to query
   const llamaQuery = async () => {
     setLoadNum(getRandomNumber);
