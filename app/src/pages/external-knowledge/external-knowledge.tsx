@@ -8,23 +8,20 @@ import TitleBar from "../../components/TitleBar";
 type Props = {
 }
 
-const KnowledgeBase = ({}: Props) => {
+const ExternalKnowledge = ({}: Props) => {
   return (
     <div className="app">
       <TitleBar text=""></TitleBar>
       <div className="notes-page">
-        <h1 className="notes-title">Areas of knowledge base</h1>
+        <h1 className="notes-title">External knowledge base</h1>
 
         {/* List of notes */}
         <ul>
             <li>
-              <Link to={`/notes` } className="notes-entry-title">Notes</Link>
+              <Link to={`/health` } className="notes-entry-title">Health</Link>
             </li>
             <li>
-              <Link to={`/personal` } className="notes-entry-title">Personal data</Link>
-            </li>
-            <li>
-              <Link to={`/external` } className="notes-entry-title">External data</Link>
+              <Link to={`/strava` } className="notes-entry-title">Strava</Link>
             </li>
         </ul>
       </div>
@@ -32,4 +29,4 @@ const KnowledgeBase = ({}: Props) => {
   );
 }
 
-export default KnowledgeBase;
+export default ExternalKnowledge;

@@ -9,10 +9,9 @@ const CalendarPage: React.FC = () => {
   return (
     <div className="app">
       <TitleBar text=""></TitleBar>
-      <h1>Hello</h1>
-      <br></br>
-      <h1>Hello</h1>
-      <Calendar />
+      <div className="calendar-page">
+        <Calendar />
+      </div>
     </div>
   );
 }

@@ -4,9 +4,10 @@
     display: block;
     flex-wrap: wrap;
     height: 100%;
-    background:#020024;
+    background: #09085F;
     width: 100%;
     align-items: flex-start;
+    padding: 30px;
   }
   
   .notes-title {

@@ -30,20 +30,32 @@
   width: 33.333%;
   height: 50px;
   flex-shrink: 0;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
   background: #09085F;
+  color: #FFF;
 }
 
 .title-bar-planner-todo {
   width: 33.333%;
-  height: 1.875rem;
+  height: 50px;
   flex-shrink: 0;
+  justify-content: center;
+  text-align: center;
   background: #0F0F8E;
+  color: #FFF;
+  text-decoration: none;
 }
 
 .title-bar-planner-reminder {
   width: 33.333%;
   height: 50px;
   flex-shrink: 0;
+  justify-content: center;
+  text-align: center;
+  color: #FFF;
+  text-decoration: none;
   background: #086EC4;
 }
 
@@ -52,4 +64,6 @@
   height: 50px;
   flex-shrink: 0;
   background: #AADBE5;
+  color: #FFF;
+  text-decoration: none;
 }

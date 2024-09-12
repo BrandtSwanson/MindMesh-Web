@@ -1,33 +1,77 @@
 /* src/Calendar.css */
+.calendar-page {
+  font-family: Arial, sans-serif;
+  justify-content: left;
+  display: block;
+  flex-wrap: wrap;
+  height: 100%;
+  background: #086EC4;
+  width: 100%;
+  align-items: flex-start;
+}
+
 .calendar {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    max-width: 80%;
     margin: 0 auto;
+  }
+
+  .calendar-month {
+    margin-top: 5%;
+    font-family: Inter;
+    font-size: 3.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
+  }
+  
+  .change-month {
+    width: 24%;
+    position: relative;
+    margin: 5px;
+    padding: 10px;
+    display: inline-block;
   }
   
   .calendar-header {
     display: grid;
+    color: #FFF;
     grid-template-columns: repeat(7, 1fr);
-    text-align: center;
+    text-align: left;
     font-weight: bold;
+    background: #09085F;
+  }
+
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
   }
   
   .calendar-header-day {
-    padding: 10px;
+    padding: 7px;
     border: 1px solid #ddd;
+    text-decoration: none;
   }
   
+  .link {
+    text-decoration: none;
+    color: #09085F;;
+  }
+
   .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    text-align: center;
+    text-align: left;
+    text-decoration: none;
   }
   
   .calendar-cell {
-    padding: 20px;
+    padding: 7px;
+    text-decoration: none;
+    background:#AADBE5;
     border: 1px solid #ddd;
-    height: 50px;
-    line-height: 50px;
+    height: 150px;
   }
   

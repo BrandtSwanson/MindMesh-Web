@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:8080'; // Replace with your Go backend's URL
+const baseURL = 'http://localhost:8181'; // Replace with your Go backend's URL
 
 const api = axios.create({
   baseURL,
@@ -32,4 +32,12 @@ export const addPersonalData = (personal:string) => {
 
 export const getPersonalEntries = () => {
   return api.get(`/api/personal`);
+};
+
+export const saveEvent = (event:string, eventId:number) => {
+  return api.post(`/api/events/${eventId}`, event);
+};
+
+export const getEventById = (eventId:number) => {
+  return api.get(`/api/events/${eventId}`);
 };

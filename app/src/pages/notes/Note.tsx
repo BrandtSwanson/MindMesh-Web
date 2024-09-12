@@ -32,6 +32,8 @@ const Notes = ({}: Props) => {
         // Add more properties as needed (e.g., createdAt, updatedAt)
       };
 
+      console.log("HERE A!");
+
       createNote(JSON.stringify(newNote))
         .then((response) => {
           // Update the state to include the new note
@@ -48,6 +50,8 @@ const Notes = ({}: Props) => {
         content: newNoteText,
         // Add more properties as needed (e.g., createdAt, updatedAt)
       };
+
+      console.log("HERE B!");
 
       createNote(JSON.stringify(newNote))
         .then((response) => {

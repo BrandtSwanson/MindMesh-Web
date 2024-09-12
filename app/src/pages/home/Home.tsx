@@ -19,16 +19,16 @@ const HomePage = ({}: Props) => {
           <h2 className="feature-text">KNOWLEDGE</h2>
         </Link>
         </div>
-        <div className="planner">
-          <Link to={`/goals/`} style={{ textDecoration: 'none' }}>
-          </Link>
+        <Link to={`/assistant/`} className="planner">
+          {/* <Link to={`/goals/`} className="planner-cal" style={{ textDecoration: 'none' }}> */}
           <div className="planner-cal"></div>
+          {/* </Link> */}
           <div className="planner-todo"></div>
           <div className="planner-reminder"></div>
           <h2 className="planner-text">AGENTS</h2>
-        </div>
+        </Link>
         <div className="assistant">
-          <Link to={`/assistant/`} style={{ textDecoration: 'none' }}>
+          <Link to={`/calendar/`} style={{ textDecoration: 'none' }}>
               <h2 className="feature-text">VIEWS</h2>
           </Link>
         </div>

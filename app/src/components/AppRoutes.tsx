@@ -6,7 +6,12 @@ import HomePage from '../pages/home/Home'
 import NoteDetail from '../pages/notes/NoteDetail';
 import Assistant from '../pages/assistant/Assistant';
 import Personal from '../pages/personal/Personal'
+import ExternalKnowledge from '../pages/external-knowledge/external-knowledge';
 import KnowledgeBase from '../pages/knowledge-base/KnowledgeBase';
+import Health from '../pages/external-knowledge/health';
+import Strava from '../pages/external-knowledge/strava';
+import CalendarDay from '../pages/calendar/CalendarDay';
+import Event from '../pages/calendar/Event';
 
 type Props = {
 }
@@ -18,9 +23,14 @@ const AppRoutes = ({}: Props) => (
         <Route path="/notes" element={<Notes />} />
         <Route path="/notes/:noteId" element={<NoteDetail/>} />
         <Route path="/calendar" element={<CalendarPage />} />
+        <Route path="/calendar/:month/:day/:year" element={<CalendarDay />} />
         <Route path="/assistant" element={<Assistant/>} />
         <Route path="/knowledgebase" element={<KnowledgeBase/>} />
         <Route path="/personal" element={<Personal/>} />
+        <Route path="/external" element={<ExternalKnowledge/>} />
+        <Route path="/health" element={<Health/>} />
+        <Route path="/strava" element={<Strava/>} />
+        <Route path="/event/:eventId" element={<Event/>} />
       </Routes>
     </Router>
   )
