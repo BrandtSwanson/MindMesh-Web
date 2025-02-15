@@ -1,10 +1,9 @@
 @import url("../global/App.css");
 
-.knowledge-base-page {
+.notes-detail-page {
     font-family: Arial, sans-serif;
     justify-content: left;
     display: block;
-    flex-wrap: wrap;
     height: 100%;
     background: var(--color-b);
     width: 100%;
@@ -19,8 +18,8 @@
     overflow-y: scroll; /* Add this line to enable scrolling */
   }
   
-  .knowledge-base-title {
-    padding-left: 7.5%;
+  .notes-detail-title {
+    padding-top: var(--title-bar-height);
     color: var(--text-color-a);
     font-family: Inter;
     font-size: 3.75rem;
@@ -28,31 +27,48 @@
     font-weight: 400;
     line-height: normal;
   }
+
+  .notes-detail-description {
+    color: var(--text-color-a);
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .notes-detail-quick-entry {
+    width: 90%;
+    position:static;
+    height: 10%;
+    flex-shrink: 0;
+    border-radius: 1.0625rem;
+    border: .25rem solid var(--color-b);
+    background: var(--color-c);
+    color: #FFF;
+  }
   
-  .knowledge-base-quick-entry {
-    width: 99%;
+  
+  .notes-detail-quick-entry {
+    width: 90%;
     position:static;
     height: 5%;
     flex-shrink: 0;
     border-radius: 1.0625rem;
     border: .25rem solid var(--color-b);
     background: var(--color-c);
-    color: var(--text-color-a);
+    color: #FFF;
   }
-  
-  /* Header styles */
-  h1 {
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .knowledge-base-entry-title {
-    color: var(--text-color-a);;
+
+  .notes-detail-entry-title {
+    color: var(--color-e);
     text-decoration: none;
   }
   
   
-  /* button {
+/* button {
+    display: block;
+    margin-bottom: 10px;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -60,13 +76,13 @@
     cursor: pointer;
     font-size: 16px;
     text-decoration: none;
-  }
+}
   
   button:hover {
     background-color: #0056b3;
   } */
   
-  /* List of knowledge-base styles
+  /* List of notes-detail styles */
   ul {
     list-style: none;
     padding: 0;
@@ -77,23 +93,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  } */
-  
-  .knowledge-base-list {
-    list-style: none;
-    padding: 0;
   }
-  
-  .knowledge-base-item {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    background-color: var(--color-d);
-    color: var(--text-color-a);
-    width:85%;
-    padding: 7px;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto; /* Add this line to center the element */
-    margin-bottom: 10px; /* Add this line to spread the items */
+
+  .notes-detail-view {
+    padding-left: 7.5%;
+  }
+
+  .notes-detail-button {
+    margin-right: 5px;
+    margin-top: 15px;
+    background-color: var(--color-a);
+    color: #fff;
+    border: none;
     border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
   }
+  

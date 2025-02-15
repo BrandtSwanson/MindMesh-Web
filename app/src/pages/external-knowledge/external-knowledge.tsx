@@ -16,11 +16,11 @@ const ExternalKnowledge = ({}: Props) => {
         <h1 className="notes-title">External knowledge base</h1>
 
         {/* List of notes */}
-        <ul>
-            <li>
+        <ul className="knowledge-base-list">
+            <li className="knowledge-base-item">
               <Link to={`/health` } className="notes-entry-title">Health</Link>
             </li>
-            <li>
+            <li className="knowledge-base-item">
               <Link to={`/strava` } className="notes-entry-title">Strava</Link>
             </li>
         </ul>

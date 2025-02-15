@@ -1,49 +1,78 @@
+@import url("../global/App.css");
+
 .notes-page {
   font-family: Arial, sans-serif;
   justify-content: left;
   display: block;
   flex-wrap: wrap;
   height: 100%;
-  background:#020024;
+  background: var(--color-b);
   width: 100%;
   align-items: flex-start;
   padding: 30px;
+  box-sizing: border-box;
+  position: fixed;
+  flex-wrap: wrap;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  overflow-y: scroll; /* Add this line to enable scrolling */
+}
+
+.note-header {
+  margin: auto auto; /* Add this line to center the element */
+  justify-content: center;
+  align-items: center;
+  width:100%;
 }
 
 .notes-title {
-  color: #FFF;
+  margin-left: 7.5%;
   font-family: Inter;
   font-size: 3.75rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  width:85%;
+  color: var(--text-color-a);
+  margin-bottom: 20px;
+  padding-top: var(--title-bar-height);
 }
 
 .notes-quick-entry {
-  width: 99%;
-  position:static;
-  height: 5%;
+  margin-left: 7.5%;
+  width:85%;
+  position: static;
+  height: 40px;
   flex-shrink: 0;
   border-radius: 1.0625rem;
-  border: .25rem solid #09085F;
-  background: #0F0F8E;
-  color: #FFF;
-}
-
-/* Header styles */
-h1 {
-  color: #333;
-  margin-bottom: 20px;
+  border: .25rem solid var(--color-b);
+  background: var(--color-c);
+  color: var(--text-color-a);
 }
 
 .notes-entry-title {
-  color: #AADBE5;
+  color: var(--color-e);
   text-decoration: none;
 }
 
+.note-list-delete-button {
+  background-color: var(--color-a);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  margin-top: auto;
+  margin-bottom: auto;
+}
 
-button {
-  background-color: #007bff;
+.note-add-note-button {
+  display: block;
+  margin-left: 7.5%;
+  margin-top: 15px;
+  background-color: var(--color-a);
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -56,15 +85,27 @@ button:hover {
   background-color: #0056b3;
 }
 
+.notes-list-title {
+  color: var(--text-color-a);
+  text-decoration: none;
+}
+
 /* List of notes styles */
-ul {
+.note-list {
   list-style: none;
   padding: 0;
 }
 
-li {
+.note-item {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
+  background-color: var(--color-d);
+  color: var(--text-color-a);
+  width:85%;
+  padding: 7px;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto; /* Add this line to center the element */
+  margin-bottom: 10px; /* Add this line to spread the items */
+  border-radius: 4px;
 }

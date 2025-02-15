@@ -13,14 +13,13 @@ const TitleBar = ({text}: Props) => (
       </div>
       
       <div className="title-bar-planner">
-        <div className="title-bar-planner-cal">
-        <Link to={`/knowledgebase`}><div className="filler"></div></Link></div>
-        <div className="title-bar-planner-todo"><Link to={`/assistant`}><div className="filler"></div></Link></div>
+        <div className="title-bar-planner-cal"><Link to={`/knowledgebase`}><div className="filler"></div></Link></div>
+        <div className="title-bar-planner-todo"><Link to={`/agents`}><div className="filler"></div></Link></div>
         <div className="title-bar-planner-reminder"><Link to={`/calendar`}><div className="filler"></div></Link></div>
       </div>
 
-      <div className="title-bar-assistant">
-      <Link to={`/assistant/`} style={{ textDecoration: 'none' }}><div className="filler"></div></Link>
+      <div className="title-bar-agent">
+      <Link to={`/`} style={{ textDecoration: 'none' }}><div className="filler"></div></Link>
       </div>
       
     </div>

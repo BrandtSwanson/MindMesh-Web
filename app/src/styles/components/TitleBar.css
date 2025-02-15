@@ -1,15 +1,19 @@
+@import url("../global/App.css");
+
 .title-bar {
   width: 100%;
-  height: 50px;
+  height: var(--title-bar-height);
   flex-shrink: 0;
   position: fixed;
+  top: 0;
+  z-index: 9999;
 }
 
 .title-bar-notes {
   width: 33.333%;
   height: 100%;
   flex-shrink: 0;
-  background: #020024;
+  background: var(--color-a);
 }
 
 .filler {
@@ -33,7 +37,7 @@
   justify-content: center;
   text-align: center;
   text-decoration: none;
-  background: #09085F;
+  background: var(--color-b);
   color: #FFF;
 }
 
@@ -43,7 +47,7 @@
   flex-shrink: 0;
   justify-content: center;
   text-align: center;
-  background: #0F0F8E;
+  background: var(--color-c);
   color: #FFF;
   text-decoration: none;
 }
@@ -56,14 +60,14 @@
   text-align: center;
   color: #FFF;
   text-decoration: none;
-  background: #086EC4;
+  background: var(--color-d);;
 }
 
-.title-bar-assistant {
+.title-bar-agent {
   width: 33.333%;
   height: 50px;
   flex-shrink: 0;
-  background: #AADBE5;
+  background: var(--color-e);;
   color: #FFF;
   text-decoration: none;
 }

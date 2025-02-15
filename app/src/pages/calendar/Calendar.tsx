@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/calendar/Calendar.css';
-import Event from './Event';
+import { Event } from './Event';
 import { Link } from 'react-router-dom';
+import { getEvents } from '../../api/api'
+import EventTile from './EventTile';
 
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const monthsOfYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -56,18 +58,27 @@ const Calendar: React.FC = () => {
 
   useEffect(() => {
     updateCalendar(currentMonth, currentYear);
-  }, [currentMonth, currentYear]);
+    
+    getEvents()
+      .then((response) => setEvents(response.data || []))
+      .catch((error) => console.error("Error fetching notes:", error));
+
+      // events && events.length > 0 && (
+      //   events.map((event) => (
+      //     console.log(event)
+      //   )))
+  }, [currentMonth, currentYear, events]);
 
   return (
     <div className="calendar">
       <h1 className="calendar-month">
         {monthsOfYear[currentMonth]} {currentYear}
       </h1>
-      <span><button className="change-month" onClick={todaysDate}>Today's Date</button>
-      <button className="change-month" onClick={lastMonth}>Last Month</button>
-      <button className="change-month" onClick={nextMonth}>Next Month</button>
+      <span><button className="calendar-button" onClick={todaysDate}>Today's Date</button>
+      <button className="calendar-button" onClick={lastMonth}>Last Month</button>
+      <button className="calendar-button" onClick={nextMonth}>Next Month</button>
       <Link to="/event/0">
-        <button className="change-month">Create Event</button>
+        <button className="calendar-button">Create Event</button>
       </Link>
       </span>
       <div className="calendar-header">
@@ -83,16 +94,17 @@ const Calendar: React.FC = () => {
             <div key={index} className="calendar-cell">
               {day}
               <div className="events">
-                {/* {events
-                  .filter(
-                    (event) =>
-                      event.date.getDate() === day &&
-                      event.date.getMonth() === currentMonth &&
-                      event.date.getFullYear() === currentYear
-                  )
-                  .map((event) => (
-                    <Event key={event.id} event={event} />
-                  ))} */}
+              {events
+                .filter(
+                  (event) =>
+                    new Date(event.start).getDate() === day &&
+                    new Date(event.start).getMonth() === currentMonth &&
+                    new Date(event.start).getFullYear() === currentYear
+                )
+                .map((event) => {
+                  return <Link className="event-link" to={`/event/${event.id}` }><EventTile key={event.id} event={event} /></Link>;
+                })}
+
               </div>
             </div>
           </Link>

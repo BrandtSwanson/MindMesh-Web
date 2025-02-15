@@ -1,70 +1,78 @@
 @import url("../global/App.css");
 
-/* src/Event.css */
+/* src/agent-config.css */
 
-.event {
-    background-color: var(--color-d);;
+.agent-config {
+    background: var(--color-c);
+    padding-top: var(--title-bar-height);
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    padding: 20px;
-    margin: 50px 0;
+    padding: 30px;
     font-family: Arial, sans-serif;
-    display: block;
+    box-sizing: border-box;
     position: fixed;
     flex-wrap: wrap;
-    height: 100%;
-    width: 100%;
-    align-items: flex-start;
     top: 0;
     left: 0;
     z-index: 9998;
     overflow-y: scroll; /* Add this line to enable scrolling */
+}
+
+.view-agent-config {
+  margin-top: 50px;
+}
+
+.agent-config-title {
+    margin-left: 7.5%;
+    padding-top: var(--title-bar-height);
+    font-family: Inter;
+    font-size: 3.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
   }
 
-  .view-event {
+  .agent-config-name {
     margin-left: 7.5%;
-  }
-  
-  .event-name {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--text-color-a);
+    color: #fff;
     margin-bottom: 10px;
   }
   
-  .event-location {
+  .agent-config-location {
+    margin-left: 7.5%;
     font-size: 1rem;
-    color: var(--text-color-a);
+    color: #fff;
     margin-bottom: 10px;
   }
   
-  .event-time {
+  .agent-config-time {
+    margin-left: 7.5%;
     font-size: 1rem;
-    color: var(--text-color-a);
+    color: #fff;
     margin-bottom: 10px;
   }
 
-  .event-input {
+  .agent-config-input {
+    margin-left: 7.5%;
     position:static;
     width: 60%;
     height: 30px;
+    margin-bottom: 5px;
     flex-shrink: 0;
     border-radius: 1.0625rem;
     display: inline-block;
-    border: .25rem solid var(--color-b);
+    border: .1rem solid var(--color-e);
     background: var(--color-c);
     color: var(--text-color-a);
   }
-  
-  .event-description {
-    font-size: 0.875rem;
-    color: var(--text-color-a);
-    margin-bottom: 10px;
-  }
-  
-  .event-button {
-    margin-right: 7.5%;
-    margin-top: 5px;
+  .agent-config-button {
     display: block;
+    margin-left: 7.5%;
+    margin-top: 5px;
     background-color: var(--color-a);
     color: #fff;
     border: none;
@@ -72,6 +80,28 @@
     cursor: pointer;
     font-size: 16px;
     text-decoration: none;
+  }
+  
+  .agent-config-description {
+    margin-left: 7.5%;
+    font-size: 0.875rem;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    background-color: var(--color-d);;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+  
+  .button:hover {
+    background-color: #064e99;
   }
   
   .edit-form {
@@ -111,4 +141,8 @@
   .edit-buttons .button.cancel:hover {
     background-color: #c0392b;
   }
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
   

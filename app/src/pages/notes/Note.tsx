@@ -85,14 +85,7 @@ const Notes = ({}: Props) => {
     <div className="app">
       <TitleBar text=""></TitleBar>
       <div className="notes-page">
-        <h1 className="notes-title">My Notes</h1>
-        <input className="notes-quick-entry"
-          type="text"
-          value={newNoteTitle}
-          onChange={(e) => setNewNoteTitle(e.target.value)}
-          onKeyPress={handleKeyPress}
-          placeholder="Enter a new note title..."
-        />
+        <div className="notes-title">My Notes</div>
         <input className="notes-quick-entry"
           type="text"
           value={newNoteText}
@@ -100,16 +93,17 @@ const Notes = ({}: Props) => {
           onKeyPress={handleKeyPress}
           placeholder="Enter a new note..."
         />
-        <button onClick={addNote}>Add Note</button>
+        <button className="note-add-note-button" onClick={addNote}>Add Note</button>
 
         {/* List of notes */}
-        <ul>
+        <ul className="note-list">
         {notes && notes.length > 0 && (
           notes.map((note) => (
-            <li key={note.id}>
-              <Link to={`/notes/${note.id}` } className="notes-entry-title">{note.title}</Link>
-              <button onClick={() => deleteNoteById(note.id) }>Delete</button>
-            </li>
+            <Link to={`/notes/${note.id}` } className="notes-list-title">
+            <li className="note-item" key={note.id}>
+              {note.title}
+              <button className="note-list-delete-button" onClick={() => deleteNoteById(note.id) }>Delete</button>
+            </li></Link>
           ))
         )}
         </ul>

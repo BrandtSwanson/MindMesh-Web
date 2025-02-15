@@ -1,5 +1,15 @@
 /* App.css */
 
+:root {
+    --color-a: #454632;
+    --color-b: #f0e9da;
+    --color-c: #f1f1f1; 
+    --color-d: #dac4b3; 
+    --color-e: #afaaa6; 
+    --text-color-a: #0a0a0a;
+    --title-bar-height: 50px;
+}
+
 .app {
     display: flex;
     height: 100vh;
@@ -9,4 +19,3 @@
 .content {
     flex-grow: 1; /* Make the content take the remaining space */
 }
-  

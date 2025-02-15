@@ -12,20 +12,25 @@ const KnowledgeBase = ({}: Props) => {
   return (
     <div className="app">
       <TitleBar text=""></TitleBar>
-      <div className="notes-page">
-        <h1 className="notes-title">Areas of knowledge base</h1>
+      <div className="knowledge-base-page">
+        <h1 className="knowledge-base-title">Knowledge Base</h1>
 
         {/* List of notes */}
-        <ul>
-            <li>
-              <Link to={`/notes` } className="notes-entry-title">Notes</Link>
+        <ul className="knowledge-base-list">
+        <Link to={`/notes` } className="knowledge-base-entry-title">
+            <li className="knowledge-base-item">
+              Notes
             </li>
-            <li>
-              <Link to={`/personal` } className="notes-entry-title">Personal data</Link>
+            </Link>
+            <Link to={`/personal` } className="knowledge-base-entry-title">
+            <li className="knowledge-base-item">
+              Personal data
             </li>
-            <li>
-              <Link to={`/external` } className="notes-entry-title">External data</Link>
-            </li>
+            </Link>
+            <Link to={`/external` } className="knowledge-base-entry-title">
+            <li className="knowledge-base-item">
+              External data
+            </li></Link>
         </ul>
       </div>
     </div>

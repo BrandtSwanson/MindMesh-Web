@@ -120,13 +120,13 @@ const Personal = ({}: Props) => {
           onKeyPress={handleKeyPress}
           placeholder="Enter water drank..."
         />
-        <button onClick={addPersonal}>Add Data</button>
+        <button className="note-add-note-button" onClick={addPersonal}>Add Data</button>
 
         {/* List of notes */}
-        <ul>
+        <ul className="note-list">
         {personalEntries && personalEntries.length > 0 && (
           personalEntries.map((entry) => (
-            <li key={entry.id}>
+            <li className="note-item" key={entry.id}>
               <h5 style={{ color: '#fff' }}>{entry.timestamp}</h5>
             </li>
           ))

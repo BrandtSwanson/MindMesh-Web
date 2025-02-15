@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import "../../styles/calendar/Event.css"
 import TitleBar from '../../components/TitleBar';
-import { saveEvent, getEventById } from "../../api/api";
+import { saveEvent, getEventById, updateEvent, deleteEvent } from "../../api/api";
 import { Link, useParams, useNavigate } from "react-router-dom";
 
-interface Event {
+export interface Event {
     id:number;
     dtstamp:Date;
     name:string;     // Event name or title
@@ -48,27 +48,25 @@ const EventComponent: React.FC<EventProps> = () => {
 
   useEffect(() => {
     if(parseInt(eventId) == 0)
-      {
-        setIsEditing(true);
-        console.log("SUC");
-      }
-    // You could set your event data here if fetched from an API or passed as props
-    // Example for loading the event:
-    // setEvent({
-    //   id: -1,
-    //   dtstamp: new Date(),
-    //   name: 'Sample Event',
-    //   start: new Date(),
-    //   end: new Date(new Date().getTime() + 60 * 60 * 1000), // 1 hour later
-    //   description: 'This is a sample event description.',
-    //   location: 'Sample Location',
-    //   status: '',
-    //   priority: 0,
-    //   organizer: '',
-    //   class: '',
-    //   attendees: []
-    // });
-  }, []);
+    {
+      setIsEditing(true);
+      console.log("SUC");
+    }
+    else
+    {
+      console.log("HEREPT2");
+      setIsEditing(false);
+      getEventById(parseInt(eventId)).then((fetchedEvent) => {
+        if (fetchedEvent) {
+          console.log("GETS HERE");
+          fetchedEvent.start = new Date(fetchedEvent.start);
+          fetchedEvent.end = new Date(fetchedEvent.end);
+          setEvent(fetchedEvent); // Now 'fetchedEvent' is of type 'Event'
+          setEditedEvent(fetchedEvent);
+        }
+      });
+    }
+  }, [eventId]);
 
   // Handler to toggle edit mode
   const handleEditClick = () => {
@@ -83,44 +81,64 @@ const EventComponent: React.FC<EventProps> = () => {
     onSave();
   };
 
+  // Handler to save the changes
+  const handleDeleteClick = () => {
+    deleteEvent(parseInt(eventId));
+    navigate(`/calendar`);
+  };
+
   const onSave = () => {
     if (editedEvent.name.trim() !== "") {
       if (editedEvent.id == -1)
+      {
         editedEvent.id = Date.now()
-      editedEvent.dtstamp = new Date();
-      saveEvent(JSON.stringify(editedEvent), editedEvent.id)
-        .then((response) => {
-          // Update the state to include the new note
-        })
-        .catch((error) => console.error("Error creating note:", error));
+        editedEvent.dtstamp = new Date();
+        saveEvent(JSON.stringify(editedEvent), editedEvent.id)
+          .then((response) => {
+            // Update the state to include the new note
+          })
+          .catch((error) => console.error("Error creating note:", error));
+          navigate(`/event/${editedEvent.id}`);
+      }
+      else
+      {
+        updateEvent(JSON.stringify(editedEvent), editedEvent.id);
+        setIsEditing(false);
+      }
     } 
-    navigate(`/event/${editedEvent.id}`);
   }
 
   const changeDate = (e, start) => {
+      const newDate = new Date(e.target.value)
+      newDate.setHours(newDate.getHours() - 5);
+
     if(!start)
     {
-      if(new Date(e.target.value).getTime() < editedEvent.start.getTime())
+      if(newDate.getTime() < editedEvent.start.getTime())
         console.log("HERLEKJ");
       else
         setEditedEvent((prev) => ({
           ...prev,
-          end: new Date(e.target.value),
+          end: newDate,
         }))
     }
-
-    if(new Date(e.target.value).getTime() > editedEvent.start.getTime())
-      console.log("HERLEKJ");
-    else
-      setEditedEvent((prev) => ({
-        ...prev,
-        start: new Date(e.target.value),
-      }))
+    else 
+    {
+      if(newDate.getTime() > editedEvent.end.getTime())
+        console.log("HERLEKJ");
+      else
+        setEditedEvent((prev) => ({
+          ...prev,
+          start: newDate,
+        }))
+    }
   }
 
   // Handler to cancel editing
   const handleCancelClick = () => {
     setIsEditing(false); // Exit edit mode without saving
+    if(parseInt(eventId) == 0)
+      navigate(`/calendar`);
   };
 
   // Handler to handle input changes
@@ -168,10 +186,7 @@ const EventComponent: React.FC<EventProps> = () => {
             name="start"
             value={editedEvent.start.toISOString().slice(0, 16)}
             onChange={(e) =>
-              setEditedEvent((prev) => ({
-                ...prev,
-                start: new Date(e.target.value),
-              }))
+              changeDate(e, true)
             }
           />
           <input
@@ -181,7 +196,8 @@ const EventComponent: React.FC<EventProps> = () => {
             value={editedEvent.end.toISOString().slice(0, 16)}
             onChange={(e) =>
               changeDate(e, false)}
-          /> <input
+          /> 
+          <input
           className="event-input"
           type="text"
           name="status"
@@ -234,8 +250,8 @@ const EventComponent: React.FC<EventProps> = () => {
           }
           placeholder="Attendees (comma-separated)"
         />
-          <button onClick={handleSaveClick}>Save</button>
-          <button onClick={handleCancelClick}>Cancel</button>
+          <button  className="event-button"onClick={handleSaveClick}>Save</button>
+          <button  className="event-button"onClick={handleCancelClick}>Cancel</button>
         </div>
       ) : (
         // Display mode
@@ -243,10 +259,11 @@ const EventComponent: React.FC<EventProps> = () => {
           <div className="event-name">{event.name}</div>
           <div className="event-location">{event.location}</div>
           <div className="event-time">
-            {event.start.getHours()}:{event.start.getMinutes()} - {event.end.getHours()}:{event.end.getMinutes()}
+            {new Date(event.start).toLocaleTimeString()} - {new Date(event.end).toLocaleTimeString()}
           </div>
           <div className="event-description">{event.description}</div>
-          <button onClick={handleEditClick}>Edit</button>
+          <button className="event-button" onClick={handleEditClick}>Edit</button>
+          <button className="event-button" onClick={handleDeleteClick}>Delete</button>
         </div>
       )}
     </div>
