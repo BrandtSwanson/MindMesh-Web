@@ -1,6 +1,6 @@
 @import url("../global/App.css");
 
-.notes-page {
+.budget-page {
   font-family: Arial, sans-serif;
   justify-content: left;
   display: block;
@@ -11,7 +11,7 @@
   align-items: flex-start;
   padding: 30px;
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
   flex-wrap: wrap;
   top: 0;
   left: 0;
@@ -19,14 +19,14 @@
   overflow-y: scroll; /* Add this line to enable scrolling */
 }
 
-.note-header {
+.budget-header {
   margin: auto auto; /* Add this line to center the element */
   justify-content: center;
   align-items: center;
   width:100%;
 }
 
-.notes-title {
+.budget-title {
   margin-left: 7.5%;
   font-family: Inter;
   font-size: 3.75rem;
@@ -39,30 +39,24 @@
   padding-top: var(--title-bar-height);
 }
 
-.notes-quick-entry {
-  overflow: visible;
-  margin-left: 7%;
-  width:86%;
+.budget-quick-entry {
+  margin-left: 7.5%;
+  width:85%;
   position: static;
+  height: 40px;
   flex-shrink: 0;
   border-radius: 1.0625rem;
   border: .25rem solid var(--color-b);
   background: var(--color-c);
   color: var(--text-color-a);
-  z-index: 9999;
 }
 
-.mdxeditor-popup-container {
-  z-index: 9999 !important;
-  position: absolute !important;
-}
-
-.notes-entry-title {
+.budget-entry-title {
   color: var(--color-e);
   text-decoration: none;
 }
 
-.note-list-delete-button {
+.budget-list-delete-button {
   background-color: var(--color-a);
   color: #fff;
   border: none;
@@ -74,7 +68,7 @@
   margin-bottom: auto;
 }
 
-.note-add-note-button {
+.budget-add-budget-button {
   display: block;
   margin-left: 7.5%;
   margin-top: 15px;
@@ -91,18 +85,18 @@ button:hover {
   background-color: #0056b3;
 }
 
-.notes-list-title {
+.budget-list-title {
   color: var(--text-color-a);
   text-decoration: none;
 }
 
-/* List of notes styles */
-.note-list {
+/* List of budget styles */
+.budget-list {
   list-style: none;
   padding: 0;
 }
 
-.note-item {
+.budget-item {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   background-color: var(--color-d);

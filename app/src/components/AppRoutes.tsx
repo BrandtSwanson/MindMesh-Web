@@ -14,6 +14,14 @@ import AgentConfig from '../pages/agents/AgentConfig';
 import HealthPage from '../pages/health/health';
 import AgentLibrary from '../pages/agents/AgentLibrary';
 import Agent from '../pages/agents/Agent';
+import FinanceDashboard from '../pages/finance/Dashboard';
+import Budget from '../pages/finance/Budget';
+import Accounts from '../pages/finance/Accounts';
+import Transactions from '../pages/finance/Transactions';
+import AccountDetail from '../pages/finance/AccountDetail';
+import BudgetDetail from '../pages/finance/BudgetDetail';
+import Tags from '../pages/tags/Tags';
+import TagDetail from '../pages/tags/TagDetail';
 
 type Props = {
 }
@@ -36,6 +44,14 @@ const AppRoutes = ({}: Props) => (
         <Route path="/health" element={<HealthPage/>} />
         <Route path="/strava" element={<Strava/>} />
         <Route path="/event/:eventId" element={<Event/>} />
+        <Route path="/finance" element={<FinanceDashboard/>} />
+        <Route path="/budget" element={<Budget/>} />
+        <Route path="/budget/:budgetId" element={<BudgetDetail/>} />
+        <Route path="/accounts" element={<Accounts/>} />
+        <Route path="/accounts/:accountId" element={<AccountDetail/>} />
+        <Route path="/transactions" element={<Transactions/>} />
+        <Route path="/tags" element={<Tags/>} />
+        <Route path="/tags/:tagId" element={<TagDetail/>} />
       </Routes>
     </Router>
   )

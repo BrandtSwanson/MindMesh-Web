@@ -50,15 +50,12 @@ const EventComponent: React.FC<EventProps> = () => {
     if(parseInt(eventId) == 0)
     {
       setIsEditing(true);
-      console.log("SUC");
     }
     else
     {
-      console.log("HEREPT2");
       setIsEditing(false);
       getEventById(parseInt(eventId)).then((fetchedEvent) => {
         if (fetchedEvent) {
-          console.log("GETS HERE");
           fetchedEvent.start = new Date(fetchedEvent.start);
           fetchedEvent.end = new Date(fetchedEvent.end);
           setEvent(fetchedEvent); // Now 'fetchedEvent' is of type 'Event'

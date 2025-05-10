@@ -37,6 +37,23 @@
     line-height: normal;
   }
 
+  .notes-detail-more-info-button {
+    position:fixed;
+    font-family: Inter;
+    font-size: 3rem;
+    top: 75px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-a);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
   .notes-detail-quick-entry {
     width: 90%;
     position:static;
@@ -83,7 +100,7 @@
   } */
   
   /* List of notes-detail styles */
-  ul {
+  /* ul {
     list-style: none;
     padding: 0;
   }
@@ -93,7 +110,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+  } */
 
   .notes-detail-view {
     padding-left: 7.5%;

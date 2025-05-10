@@ -4,6 +4,8 @@ import "../../styles/global/App.css";
 import { Link } from "react-router-dom";
 import { createNote, getNotes, deleteNote } from "../../api/api";
 import TitleBar from "../../components/TitleBar";
+import { MDXEditor, UndoRedo, BoldItalicUnderlineToggles, toolbarPlugin } from '@mdxeditor/editor'
+import '@mdxeditor/editor/style.css'
 
 type Props = {
 }
@@ -32,7 +34,7 @@ const KnowledgeBase = ({}: Props) => {
               External data
             </li></Link>
         </ul>
-      </div>
+      </div>     
     </div>
   );
 }
