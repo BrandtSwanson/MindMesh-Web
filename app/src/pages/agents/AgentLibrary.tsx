@@ -34,7 +34,7 @@ const AgentLibrary = ({}: Props) => {
     setLoadNum(getRandomNumber);
     setQueryResponse("");
     setShowLoad(true);
-    const queryURL = new URL("http://localhost:5601/query?");
+    const queryURL = new URL("http://192.168.4.85:5601/query?");
     queryURL.searchParams.append("text", prompt + queryRequest);
 
     const response = await fetch(queryURL, { mode: "cors" });
@@ -61,7 +61,7 @@ const AgentLibrary = ({}: Props) => {
     setLoadNum(getRandomNumber);
     setQueryResponse("");
     setShowLoad(true);
-    const queryURL = new URL("http://localhost:5601/regen-index");
+    const queryURL = new URL("http://192.168.4.85:5601/regen-index");
 
     const response = await fetch(queryURL, { mode: "cors" });
     if (!response.ok) {
