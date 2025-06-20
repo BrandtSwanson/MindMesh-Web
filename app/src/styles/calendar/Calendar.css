@@ -1,0 +1,101 @@
+@import url("../global/App.css");
+.calendar-page {
+  font-family: Arial, sans-serif;
+  justify-content: left;
+  background: var(--color-d);
+  display: block;
+  height: 100%;
+  width: 100%;
+  align-items: flex-start;
+  position: fixed;
+  flex-wrap: wrap;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  overflow-y: scroll; /* Add this line to enable scrolling */
+}
+
+.calendar {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    max-width: 82%;
+    margin-bottom: 20px;
+    margin: 0 auto;
+  }
+
+  .calendar-view {
+    margin-left: 7.5%;
+    width: 85%;
+  }
+
+  .calendar-month {
+    margin-top: 70px;
+    font-family: Inter;
+    font-size: 3.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--text-color-a);
+  }
+  
+  .calendar-button {
+    width: 24%;
+    margin-top: 5px;
+    background-color: var(--color-a);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px 0.5%;
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  .event-link {
+    color: var(--text-color-a);
+    text-decoration: none;
+  }
+  
+  .calendar-header {
+    display: grid;
+    color: var(--text-color-a);
+    grid-template-columns: repeat(7, 1fr);
+    text-align: left;
+    font-weight: bold;
+    background: var(--color-b);
+  }
+
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .calendar-header-day {
+    padding: 7px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: var(--color-b);;
+  }
+
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: left;
+    text-decoration: none;
+  }
+  
+  .calendar-cell {
+    padding: 7px;
+    text-decoration: none;
+    background:var(--color-e);;
+    border: 1px solid #ddd;
+    color: black;
+    height: 150px;
+  }
+  

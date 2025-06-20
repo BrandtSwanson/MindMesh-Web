@@ -1,0 +1,130 @@
+@import url("../global/App.css");
+
+.notes-detail-page {
+    font-family: Arial, sans-serif;
+    justify-content: left;
+    display: block;
+    height: 100%;
+    background: var(--color-b);
+    width: 100%;
+    align-items: flex-start;
+    padding: 30px;
+    box-sizing: border-box;
+    position: fixed;
+    flex-wrap: wrap;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    overflow-y: scroll; /* Add this line to enable scrolling */
+  }
+  
+  .notes-detail-title {
+    padding-top: var(--title-bar-height);
+    color: var(--text-color-a);
+    font-family: Inter;
+    font-size: 3.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .notes-detail-description {
+    color: var(--text-color-a);
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .notes-detail-more-info-button {
+    position:fixed;
+    font-family: Inter;
+    font-size: 3rem;
+    top: 75px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-a);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .notes-detail-quick-entry {
+    width: 90%;
+    position:static;
+    height: 10%;
+    flex-shrink: 0;
+    border-radius: 1.0625rem;
+    border: .25rem solid var(--color-b);
+    background: var(--color-c);
+    color: #FFF;
+  }
+  
+  
+  .notes-detail-quick-entry {
+    width: 90%;
+    position:static;
+    height: 5%;
+    flex-shrink: 0;
+    border-radius: 1.0625rem;
+    border: .25rem solid var(--color-b);
+    background: var(--color-c);
+    color: #FFF;
+  }
+
+  .notes-detail-entry-title {
+    color: var(--color-e);
+    text-decoration: none;
+  }
+  
+  
+/* button {
+    display: block;
+    margin-bottom: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+  
+  button:hover {
+    background-color: #0056b3;
+  } */
+  
+  /* List of notes-detail styles */
+  /* ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  } */
+
+  .notes-detail-view {
+    padding-left: 7.5%;
+  }
+
+  .notes-detail-button {
+    margin-right: 5px;
+    margin-top: 15px;
+    background-color: var(--color-a);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  

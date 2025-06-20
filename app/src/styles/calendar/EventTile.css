@@ -1,0 +1,26 @@
+@import url("../global/App.css");
+
+/* EventTile.css */
+.event-tile {
+    background-color: #fff;
+    padding: 3px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .event-title {
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 0 2px 0;
+  }
+  
+.event-tile-time, .event-location {
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    /* Add the following line to override the white color after clicking */
+    background-color: transparent;
+}

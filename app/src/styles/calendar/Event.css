@@ -1,0 +1,114 @@
+@import url("../global/App.css");
+
+/* src/Event.css */
+
+.event {
+    background-color: var(--color-d);;
+    display: flex;
+    padding: 20px;
+    margin: 50px 0;
+    font-family: Arial, sans-serif;
+    display: block;
+    position: fixed;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    align-items: flex-start;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    overflow-y: scroll; /* Add this line to enable scrolling */
+  }
+
+  .view-event {
+    margin-left: 7.5%;
+  }
+  
+  .event-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color-a);
+    margin-bottom: 10px;
+  }
+  
+  .event-location {
+    font-size: 1rem;
+    color: var(--text-color-a);
+    margin-bottom: 10px;
+  }
+  
+  .event-time {
+    font-size: 1rem;
+    color: var(--text-color-a);
+    margin-bottom: 10px;
+  }
+
+  .event-input {
+    position:static;
+    width: 60%;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 1.0625rem;
+    display: inline-block;
+    border: .25rem solid var(--color-b);
+    background: var(--color-c);
+    color: var(--text-color-a);
+  }
+  
+  .event-description {
+    font-size: 0.875rem;
+    color: var(--text-color-a);
+    margin-bottom: 10px;
+  }
+  
+  .event-button {
+    margin-right: 7.5%;
+    margin-top: 5px;
+    display: block;
+    background-color: var(--color-a);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  .edit-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-form input,
+  .edit-form textarea {
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  
+  .edit-form input[type="datetime-local"] {
+    padding: 8px;
+    font-size: 1rem;
+  }
+  
+  .edit-buttons {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .edit-buttons .button {
+    margin-right: 10px;
+  }
+  
+  .edit-buttons .button.cancel {
+    background-color: #e74c3c;
+  }
+  
+  .edit-buttons .button.cancel:hover {
+    background-color: #c0392b;
+  }
+  
